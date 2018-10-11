@@ -107,3 +107,7 @@ func detectMasters(zk string, masters []string) <-chan []string {
 	}
 	return changed
 }
+
+func setupLogging() {
+	logging.SetupLogs()
+}
