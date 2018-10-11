@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"time"
+	//"time"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/mesosphere/mesos-dns/errorutil"
@@ -39,8 +39,8 @@ func Doer(client *http.Client, config Config) httpcli.Doer {
 	return httpcli.DoerFunc(func(req *http.Request) (*http.Response, error) {
 		// TODO if we still have a valid token, try using it first
 		token := jwt.New(jwt.SigningMethodRS256)
-		token.Claims["uid"] = config.ID
-		token.Claims["exp"] = time.Now().Add(time.Hour).Unix()
+		//token.Claims["uid"] = config.ID
+		//token.Claims["exp"] = time.Now().Add(time.Hour).Unix()
 		// SignedString will treat secret as PEM-encoded key
 		tokenStr, err := token.SignedString([]byte(config.PrivateKey))
 		if err != nil {
