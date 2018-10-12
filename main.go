@@ -111,11 +111,3 @@ func detectMasters(zk string, masters []string) <-chan []string {
 func setupLogging() {
 	logging.SetupLogs()
 }
-
-func setupEnvironment() {
-	logging.SetupLogs()
-}
-
-func setupEnvironmentAgain() {
-	logging.SetupLogs()
-}
