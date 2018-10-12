@@ -115,3 +115,7 @@ func setupLogging() {
 func setupEnvironment() {
 	logging.SetupLogs()
 }
+
+func setupEnvironmentAgain() {
+	logging.SetupLogs()
+}
