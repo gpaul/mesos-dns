@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/mesos/mesos-go/detector"
+	"github.com/mesos/mesos-go/api/v0/detector"
 	"github.com/mesosphere/mesos-dns/detect"
 	"github.com/mesosphere/mesos-dns/logging"
 	"github.com/mesosphere/mesos-dns/records"
@@ -106,4 +106,8 @@ func detectMasters(zk string, masters []string) <-chan []string {
 		changed <- masters
 	}
 	return changed
+}
+
+func setupLogging() {
+	logging.SetupLogs()
 }
